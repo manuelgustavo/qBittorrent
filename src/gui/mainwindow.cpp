@@ -1776,30 +1776,30 @@ void MainWindow::handleUpdateCheckFinished(ProgramUpdater *updater, const bool i
         updater->deleteLater();
     };
 
-    const QString newVersion = updater->getNewVersion();
-    if (!newVersion.isEmpty())
-    {
-        const QString msg {tr("A new version is available.") + u"<br/>"
-            + tr("Do you want to download %1?").arg(newVersion) + u"<br/><br/>"
-            + u"<a href=\"https://www.qbittorrent.org/news.php\">%1</a>"_s.arg(tr("Open changelog..."))};
-        auto *msgBox = new QMessageBox {QMessageBox::Question, tr("qBittorrent Update Available"), msg
-            , (QMessageBox::Yes | QMessageBox::No), this};
-        msgBox->setAttribute(Qt::WA_DeleteOnClose);
-        msgBox->setAttribute(Qt::WA_ShowWithoutActivating);
-        msgBox->setDefaultButton(QMessageBox::Yes);
-        msgBox->setWindowModality(Qt::NonModal);
-        connect(msgBox, &QMessageBox::buttonClicked, this, [msgBox, updater](QAbstractButton *button)
-        {
-            if (msgBox->buttonRole(button) == QMessageBox::YesRole)
-            {
-                updater->updateProgram();
-            }
-        });
-        connect(msgBox, &QDialog::finished, this, cleanup);
-        msgBox->show();
-    }
-    else
-    {
+    // const QString newVersion = updater->getNewVersion();
+    // if (!newVersion.isEmpty())
+    // {
+    //     const QString msg {tr("A new version is available.") + u"<br/>"
+    //         + tr("Do you want to download %1?").arg(newVersion) + u"<br/><br/>"
+    //         + u"<a href=\"https://www.qbittorrent.org/news.php\">%1</a>"_s.arg(tr("Open changelog..."))};
+    //     auto *msgBox = new QMessageBox {QMessageBox::Question, tr("qBittorrent Update Available"), msg
+    //         , (QMessageBox::Yes | QMessageBox::No), this};
+    //     msgBox->setAttribute(Qt::WA_DeleteOnClose);
+    //     msgBox->setAttribute(Qt::WA_ShowWithoutActivating);
+    //     msgBox->setDefaultButton(QMessageBox::Yes);
+    //     msgBox->setWindowModality(Qt::NonModal);
+    //     connect(msgBox, &QMessageBox::buttonClicked, this, [msgBox, updater](QAbstractButton *button)
+    //     {
+    //         if (msgBox->buttonRole(button) == QMessageBox::YesRole)
+    //         {
+    //             updater->updateProgram();
+    //         }
+    //     });
+    //     connect(msgBox, &QDialog::finished, this, cleanup);
+    //     msgBox->show();
+    // }
+    // else
+    // {
         if (invokedByUser)
         {
             auto *msgBox = new QMessageBox {QMessageBox::Information, u"qBittorrent"_s
@@ -1814,7 +1814,7 @@ void MainWindow::handleUpdateCheckFinished(ProgramUpdater *updater, const bool i
         {
             cleanup();
         }
-    }
+    // }
 }
 #endif
 

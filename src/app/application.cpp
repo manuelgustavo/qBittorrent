@@ -250,7 +250,7 @@ Application::Application(int &argc, char **argv)
     qRegisterMetaType<Log::Msg>("Log::Msg");
     qRegisterMetaType<Log::Peer>("Log::Peer");
 
-    setApplicationName(u"qBittorrent"_s);
+    setApplicationName(u"qBittorrentLM"_s);
     setOrganizationDomain(u"qbittorrent.org"_s);
 #if !defined(DISABLE_GUI)
     setDesktopFileName(u"org.qbittorrent.qBittorrent"_s);
