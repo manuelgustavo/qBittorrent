@@ -8,7 +8,7 @@
             "name": "(gdb) Launch",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/build/qbittorrent",
+            "program": "${workspaceFolder}/build/qbittorrent-sm",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}/build/",
