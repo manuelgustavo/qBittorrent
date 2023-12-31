@@ -136,8 +136,8 @@ jobs:
       - name: Prepare build artifacts
         run: |
           mkdir upload
-          copy build/qbittorrent.exe upload
-          copy build/qbittorrent.pdb upload
+          copy build/qbittorrent-lm.exe upload
+          copy build/qbittorrent-lm.pdb upload
           copy dist/windows/qt.conf upload
           # runtimes
           copy "${{ env.Qt6_DIR }}/bin/Qt6Core.dll" upload

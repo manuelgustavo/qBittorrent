@@ -25,8 +25,8 @@ Section $(inst_qbt_req) ;"qBittorrent (required)"
   ; Set output path to the installation directory.
   SetOutPath $INSTDIR
   ; Put files there
-  File "qbittorrent.exe"
-  File "qbittorrent.pdb"
+  File "qbittorrent-lm.exe"
+  File "qbittorrent-lm.pdb"
   File "qt.conf"
 
   ;Create 'translations' directory
@@ -44,7 +44,7 @@ Section $(inst_qbt_req) ;"qBittorrent (required)"
   ; Write the uninstall keys for Windows
   WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\qBittorrent" "DisplayName" "qBittorrent"
   WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\qBittorrent" "UninstallString" '"$INSTDIR\uninst.exe"'
-  WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\qBittorrent" "DisplayIcon" '"$INSTDIR\qbittorrent.exe",0'
+  WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\qBittorrent" "DisplayIcon" '"$INSTDIR\qbittorrent-lm.exe",0'
   WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\qBittorrent" "Publisher" "Corsair Soft"
   WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\qBittorrent" "URLInfoAbout" "https://www.qbittorrent.org"
   WriteRegStr HKLM "Software\Microsoft\Windows\CurrentVersion\Uninstall\qBittorrent" "DisplayVersion" "${QBT_VERSION}"
@@ -59,22 +59,22 @@ Section $(inst_qbt_req) ;"qBittorrent (required)"
   WriteRegStr HKLM "Software\Classes\qBittorrent" "" "qBittorrent Torrent File"
   WriteRegStr HKLM "Software\Classes\qBittorrent" "FriendlyTypeName" "qBittorrent Torrent File"
   WriteRegStr HKLM "Software\Classes\qBittorrent\shell" "" "open"
-  WriteRegStr HKLM "Software\Classes\qBittorrent\shell\open\command" "" '"$INSTDIR\qbittorrent.exe" "%1"'
-  WriteRegStr HKLM "Software\Classes\qBittorrent\DefaultIcon" "" '"$INSTDIR\qbittorrent.exe",1'
+  WriteRegStr HKLM "Software\Classes\qBittorrent\shell\open\command" "" '"$INSTDIR\qbittorrent-lm.exe" "%1"'
+  WriteRegStr HKLM "Software\Classes\qBittorrent\DefaultIcon" "" '"$INSTDIR\qbittorrent-lm.exe",1'
 
 SectionEnd
 
 ; Optional section (can be disabled by the user)
 Section /o $(inst_desktop) ;"Create Desktop Shortcut"
 
-  CreateShortCut "$DESKTOP\qBittorrent.lnk" "$INSTDIR\qbittorrent.exe"
+  CreateShortCut "$DESKTOP\qBittorrent.lnk" "$INSTDIR\qbittorrent-lm.exe"
 
 SectionEnd
 
 Section $(inst_startmenu) ;"Create Start Menu Shortcut"
 
   CreateDirectory "$SMPROGRAMS\qBittorrent"
-  CreateShortCut "$SMPROGRAMS\qBittorrent\qBittorrent.lnk" "$INSTDIR\qbittorrent.exe"
+  CreateShortCut "$SMPROGRAMS\qBittorrent\qBittorrent.lnk" "$INSTDIR\qbittorrent-lm.exe"
   CreateShortCut "$SMPROGRAMS\qBittorrent\$(inst_uninstall_link_description).lnk" "$INSTDIR\uninst.exe"
 
 SectionEnd
@@ -87,7 +87,7 @@ SectionEnd
 
 Function inst_startup_user
 
-  WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Run" "qBittorrent" "$INSTDIR\qbittorrent.exe"
+  WriteRegStr HKCU "Software\Microsoft\Windows\CurrentVersion\Run" "qBittorrent" "$INSTDIR\qbittorrent-lm.exe"
 
 FunctionEnd
 
@@ -136,9 +136,9 @@ Section $(inst_magnet) ;"Open magnet links with qBittorrent"
   WriteRegStr HKLM "Software\Classes\magnet" "" "URL:Magnet link"
   WriteRegStr HKLM "Software\Classes\magnet" "Content Type" "application/x-magnet"
   WriteRegStr HKLM "Software\Classes\magnet" "URL Protocol" ""
-  WriteRegStr HKLM "Software\Classes\magnet\DefaultIcon" "" '"$INSTDIR\qbittorrent.exe",1'
+  WriteRegStr HKLM "Software\Classes\magnet\DefaultIcon" "" '"$INSTDIR\qbittorrent-lm.exe",1'
   WriteRegStr HKLM "Software\Classes\magnet\shell" "" "open"
-  WriteRegStr HKLM "Software\Classes\magnet\shell\open\command" "" '"$INSTDIR\qbittorrent.exe" "%1"'
+  WriteRegStr HKLM "Software\Classes\magnet\shell\open\command" "" '"$INSTDIR\qbittorrent-lm.exe" "%1"'
 
   !insertmacro UAC_AsUser_Call Function inst_magnet_user ${UAC_SYNCREGISTERS}|${UAC_SYNCOUTDIR}|${UAC_SYNCINSTDIR}
 
@@ -151,16 +151,16 @@ Function inst_magnet_user
   WriteRegStr HKCU "Software\Classes\magnet" "" "URL:Magnet link"
   WriteRegStr HKCU "Software\Classes\magnet" "Content Type" "application/x-magnet"
   WriteRegStr HKCU "Software\Classes\magnet" "URL Protocol" ""
-  WriteRegStr HKCU "Software\Classes\magnet\DefaultIcon" "" '"$INSTDIR\qbittorrent.exe",1'
+  WriteRegStr HKCU "Software\Classes\magnet\DefaultIcon" "" '"$INSTDIR\qbittorrent-lm.exe",1'
   WriteRegStr HKCU "Software\Classes\magnet\shell" "" "open"
-  WriteRegStr HKCU "Software\Classes\magnet\shell\open\command" "" '"$INSTDIR\qbittorrent.exe" "%1"'
+  WriteRegStr HKCU "Software\Classes\magnet\shell\open\command" "" '"$INSTDIR\qbittorrent-lm.exe" "%1"'
 
 FunctionEnd
 
 Section $(inst_firewall)
 
   DetailPrint $(inst_firewallinfo)
-  nsisFirewallW::AddAuthorizedApplication "$INSTDIR\qbittorrent.exe" "qBittorrent"
+  nsisFirewallW::AddAuthorizedApplication "$INSTDIR\qbittorrent-lm.exe" "qBittorrent"
 
 SectionEnd
 
@@ -215,7 +215,7 @@ FunctionEnd
 Function check_instance
 
   check:
-  FindProcDLL::FindProc "qbittorrent.exe"
+  FindProcDLL::FindProc "qbittorrent-lm.exe"
   StrCmp $R0 "1" 0 notfound
   MessageBox MB_RETRYCANCEL|MB_ICONEXCLAMATION $(inst_warning) IDRETRY check IDCANCEL done
 
@@ -228,7 +228,7 @@ FunctionEnd
 
 Function PageFinishRun
 
-  !insertmacro UAC_AsUser_ExecShell "" "$INSTDIR\qbittorrent.exe" "" "" ""
+  !insertmacro UAC_AsUser_ExecShell "" "$INSTDIR\qbittorrent-lm.exe" "" "" ""
 
 FunctionEnd
 
