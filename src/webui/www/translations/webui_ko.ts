@@ -3376,7 +3376,7 @@ DNS 재결합 공격을 방어하기 위해
         <translation>고마운 분들</translation>
     </message>
     <message>
-        <source>An advanced BitTorrent client programmed in C++, based on Qt toolkit and libtorrent-rasterbar.</source>
+        <source>Leecher mod of qBittorremt. It shouldn't report download and upload. Upon download completion, it will stop communication with the torrent's respective tracker. Updates have also been disabled. All remaining functionalities are still the same.</source>
         <translation>Qt 툴킷과 libtorrent-rasterbar를 기반으로 C++로 프로그래밍된 발전된 형태의 BitTorrent 클라이언트입니다.</translation>
     </message>
     <message>

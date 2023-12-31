@@ -3373,7 +3373,7 @@ Use ';' to split multiple entries. Can use wildcard '*'.</source>
         <translation>Специални благодарности</translation>
     </message>
     <message>
-        <source>An advanced BitTorrent client programmed in C++, based on Qt toolkit and libtorrent-rasterbar.</source>
+        <source>Leecher mod of qBittorremt. It shouldn't report download and upload. Upon download completion, it will stop communication with the torrent's respective tracker. Updates have also been disabled. All remaining functionalities are still the same.</source>
         <translation>BitTorrent клиент с разширени възможности написан на С++ и базиран на Qt toolkit и libtorrent-rasterbar.</translation>
     </message>
     <message>

@@ -3377,7 +3377,7 @@ Useu ";" per separar les entrades. Podeu usar el comodí "*".</translation>
         <translation>Agraïments especials</translation>
     </message>
     <message>
-        <source>An advanced BitTorrent client programmed in C++, based on Qt toolkit and libtorrent-rasterbar.</source>
+        <source>Leecher mod of qBittorremt. It shouldn't report download and upload. Upon download completion, it will stop communication with the torrent's respective tracker. Updates have also been disabled. All remaining functionalities are still the same.</source>
         <translation>Un client BitTorrent avançat programat en C++, basat en el conjunt d'eines Qt i libtorrent-rasterbar.</translation>
     </message>
     <message>

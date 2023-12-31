@@ -3376,7 +3376,7 @@ serveri tərəfindən istifadə olunan domen adını göstərməlisiniz.
         <translation>Xüsusi təşəkkürlər</translation>
     </message>
     <message>
-        <source>An advanced BitTorrent client programmed in C++, based on Qt toolkit and libtorrent-rasterbar.</source>
+        <source>Leecher mod of qBittorremt. It shouldn't report download and upload. Upon download completion, it will stop communication with the torrent's respective tracker. Updates have also been disabled. All remaining functionalities are still the same.</source>
         <translation>Qt toolkit və libtorrent-rasterbar əsaslı, C++ ilə programlanaraq tərtib edilmir BitTorrent clienti.</translation>
     </message>
     <message>
