@@ -2,8 +2,8 @@ Section "un.$(remove_files)" ;"un.Remove files"
   SectionIn RO
 
 ; Remove files and uninstaller
-  Delete "$INSTDIR\qbittorrent.exe"
-  Delete "$INSTDIR\qbittorrent.pdb"
+  Delete "$INSTDIR\qbittorrent-lm.exe"
+  Delete "$INSTDIR\qbittorrent-lm.pdb"
   Delete "$INSTDIR\qt.conf"
   Delete "$INSTDIR\uninst.exe"
 
@@ -29,7 +29,7 @@ Section "un.$(remove_associations)" ;"un.Remove file associations"
   torrent_end:
 
   ReadRegStr $0 HKLM "Software\Classes\magnet\shell\open\command" ""
-  StrCmp $0 '"$INSTDIR\qbittorrent.exe" "%1"' 0 magnet_end
+  StrCmp $0 '"$INSTDIR\qbittorrent-lm.exe" "%1"' 0 magnet_end
   DetailPrint "$(uninst_mag_warn) $0"
   DeleteRegKey HKLM "Software\Classes\magnet"
   magnet_end:
@@ -48,7 +48,7 @@ Function un.remove_associations_user
   torrent_end:
 
   ReadRegStr $0 HKCU "Software\Classes\magnet\shell\open\command" ""
-  StrCmp $0 '"$INSTDIR\qbittorrent.exe" "%1"' 0 magnet_end
+  StrCmp $0 '"$INSTDIR\qbittorrent-lm.exe" "%1"' 0 magnet_end
   DetailPrint "$(uninst_mag_warn) $0"
   DeleteRegKey HKCU "Software\Classes\magnet"
   magnet_end:
@@ -67,7 +67,7 @@ SectionEnd
 Section "un.$(remove_firewall)" ;
 
   DetailPrint $(remove_firewallinfo)
-  nsisFirewallW::RemoveAuthorizedApplication "$INSTDIR\qbittorrent.exe"
+  nsisFirewallW::RemoveAuthorizedApplication "$INSTDIR\qbittorrent-lm.exe"
 
 SectionEnd
 
@@ -110,7 +110,7 @@ FunctionEnd
 Function un.check_instance
 
     check:
-    FindProcDLL::FindProc "qbittorrent.exe"
+    FindProcDLL::FindProc "qbittorrent-lm.exe"
     StrCmp $R0 "1" 0 notfound
     MessageBox MB_RETRYCANCEL|MB_ICONEXCLAMATION $(uninst_warning) IDRETRY check IDCANCEL done
 

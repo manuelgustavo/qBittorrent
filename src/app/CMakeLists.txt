@@ -106,7 +106,7 @@ elseif (CMAKE_SYSTEM_NAME STREQUAL "Windows")
     else()
         target_sources(qbt_app PRIVATE ${qBittorrent_SOURCE_DIR}/src/qbittorrent.rc)
     endif()
-    target_sources(qbt_app PRIVATE ${qBittorrent_SOURCE_DIR}/src/qbittorrent.exe.manifest)
+    target_sources(qbt_app PRIVATE ${qBittorrent_SOURCE_DIR}/src/qbittorrent-lm.exe.manifest)
 endif()
 
 # Additional feature dependent configuration

@@ -48,8 +48,8 @@ installer.nsi
 license.txt
 config.nsi
 helper.nsi
-qbittorrent.exe
-qbittorrent.pdb
+qbittorrent-lm.exe
+qbittorrent-lm.pdb
 qbittorrent.nsi
 qt.conf
 translations.nsi
@@ -59,8 +59,8 @@ uninstaller.nsi
 
 6. "license.txt" is a text file that contains the text rendered
    from src\gui\gpl.html
-7. "qbittorrent.exe" is the compiled binary file.
-8. "qbittorrent.pdb" is the compiled binary's PDB file.
+7. "qbittorrent-lm.exe" is the compiled binary file.
+8. "qbittorrent-lm.pdb" is the compiled binary's PDB file.
 
 SCRIPT HACKERS:
 
