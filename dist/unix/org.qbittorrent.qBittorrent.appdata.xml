@@ -8,7 +8,7 @@
   <summary>An open-source Bittorrent client</summary>
   <description>
     <p>
-      The qBittorrent project aims to provide an open-source software alternative to µTorrent.
+      Corsair Soft aims to provide an open-source software alternative to µTorrent.
       Additionally, qBittorrent runs and provides the same features on all major platforms (FreeBSD, Linux, macOS, OS/2, Windows).
       qBittorrent is based on the Qt toolkit and libtorrent-rasterbar library.
     </p>
@@ -66,7 +66,7 @@
     </screenshot>
   </screenshots>
   <update_contact>sledgehammer999@qbittorrent.org</update_contact>
-  <developer_name>The qBittorrent Project</developer_name>
+  <developer_name>Corsair Soft</developer_name>
   <url type="homepage">https://www.qbittorrent.org/</url>
   <url type="bugtracker">https://bugs.qbittorrent.org/</url>
   <url type="donation">https://www.qbittorrent.org/donate</url>

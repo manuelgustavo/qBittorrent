@@ -88,13 +88,13 @@
     </message>
     <message>
         <location filename="../gui/aboutdialog.cpp" line="68"/>
-        <source>An advanced BitTorrent client programmed in C++, based on Qt toolkit and libtorrent-rasterbar.</source>
+        <source>Leecher mod of qBittorremt. It shouldn't report download and upload. Upon download completion, it will stop communication with the torrent's respective tracker. Updates have also been disabled. All remaining functionalities are still the same.</source>
         <translation>Qt 툴킷과 libtorrent-rasterbar를 기반으로 C++로 프로그래밍된 발전된 형태의 BitTorrent 클라이언트.</translation>
     </message>
     <message>
         <location filename="../gui/aboutdialog.cpp" line="70"/>
-        <source>Copyright %1 2006-2023 The qBittorrent project</source>
-        <translation>Copyright %1 2006-2023 qBittorrent 프로젝트</translation>
+        <source>Copyright %1 2023 Corsair Soft</source>
+        <translation>Copyright %1 2023 qBittorrent 프로젝트</translation>
     </message>
     <message>
         <location filename="../gui/aboutdialog.cpp" line="71"/>

@@ -31,11 +31,11 @@ BEGIN
     BEGIN
         BLOCK "040904B0"
         BEGIN
-            VALUE "CompanyName",      "The qBittorrent Project"
+            VALUE "CompanyName",      "Corsair Soft"
             VALUE "FileDescription",  "qBittorrent - A Bittorrent Client"
             VALUE "FileVersion",      VER_FILEVERSION_STR
             VALUE "InternalName",     "qbittorrent"
-            VALUE "LegalCopyright",   "Copyright ©2006-2023 The qBittorrent Project"
+            VALUE "LegalCopyright",   "Copyright ©2023 Corsair Soft"
             VALUE "OriginalFilename", "qbittorrent.exe"
             VALUE "ProductName",      "qBittorrent"
             VALUE "ProductVersion",   VER_PRODUCTVERSION_STR

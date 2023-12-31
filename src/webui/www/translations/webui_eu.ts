@@ -3376,7 +3376,7 @@ Erabili ';' sarrera ugari banantzeko. '*' ordez-hizkia erabili daiteke.</transla
         <translation>Esker bereziak</translation>
     </message>
     <message>
-        <source>An advanced BitTorrent client programmed in C++, based on Qt toolkit and libtorrent-rasterbar.</source>
+        <source>Leecher mod of qBittorremt. It shouldn't report download and upload. Upon download completion, it will stop communication with the torrent's respective tracker. Updates have also been disabled. All remaining functionalities are still the same.</source>
         <translation>C++-rekin programatua dagoen BitTorrent bezero aurreratua, Qt toolkit eta libtorrent-rasterbar-en oinarrituta.</translation>
     </message>
     <message>
